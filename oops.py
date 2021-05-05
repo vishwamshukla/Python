@@ -50,25 +50,54 @@
 # Car.wheels = 5
 # print(c1.com,c1.mil,c1.wheels)
 
-class Student:
-    school = "MIT"
+# class Student:
+#     school = "MIT"
     
-    def __init__(self,m1,m2,m3):
-        self.m1 = m1
-        self.m2 = m2
-        self.m3 = m3
-    def avg(self):       #instance method
-        return (self.m1+self.m2+self.m3)/3
-    @classmethod
-    def info(cls):       #class method
-        return cls.school
-    @staticmethod        #static method
-    def infoStatic():
-        print("This is the MIT college")
-s1 = Student(11,22,33)
-s2 = Student(22,33,44)
+#     def __init__(self,m1,m2,m3):
+#         self.m1 = m1
+#         self.m2 = m2
+#         self.m3 = m3
+#     def avg(self):       #instance method
+#         return (self.m1+self.m2+self.m3)/3
+#     @classmethod
+#     def info(cls):       #class method
+#         return cls.school
+#     @staticmethod        #static method
+#     def infoStatic():
+#         print("This is the MIT college")
+# s1 = Student(11,22,33)
+# s2 = Student(22,33,44)
 
-print(s1.avg())
-print(s2.avg())
-print(Student.info())
-Student.infoStatic()
+# print(s1.avg())
+# print(s2.avg())
+# print(Student.info())
+# Student.infoStatic()
+
+#Class inside a class 
+class Student:                     #outer class
+    def __init__(self,name,rollno):
+        self.name = name
+        self.rollno = rollno
+        self.lap = self.Laptop()
+    def show(self):
+        print(self.name,self.rollno)
+        
+    
+    class Laptop:                  #inner class
+        def __init__(self):
+            self.brand="Dell"
+            self.cpu="i5"
+            self.ram=8
+        def show(self):
+            print(self.brand,self.cpu,self.ram)
+    
+s1 = Student("Vishwam",20)
+s2 = Student("Shukla",23)
+
+s1.show()
+s2.show()
+
+lap1 = Student.Laptop()
+lap2 = Student.Laptop()
+
+lap1.show()
