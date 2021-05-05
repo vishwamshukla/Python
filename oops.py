@@ -16,24 +16,59 @@
 # com2.config()
 
 
-class Student:
+# class Student:
     
-    def __init__(self):
-        self.name = "Vishwam"
-        self.age = 21
-    def compare(self, other):
-        if self.age == other.age:
-            return True
-        else:
-            return False
-s1 = Student()
-s1.age = 22
-s2 = Student()
+#     def __init__(self):
+#         self.name = "Vishwam"
+#         self.age = 21
+#     def compare(self, other):
+#         if self.age == other.age:
+#             return True
+#         else:
+#             return False
+# s1 = Student()
+# s1.age = 22
+# s2 = Student()
 
-if s1.compare(s2):
-    print("They are same")
-else:
-    print("Not same")
+# if s1.compare(s2):
+#     print("They are same")
+# else:
+#     print("Not same")
 
-print(s1.name)
-print(s2.name)
+# print(s1.name)
+# print(s2.name)
+
+
+# class Car:
+#     wheels = 4     #class variable
+#     def __init__(self):
+#         self.mil = 10          #instance variable
+#         self.com = "BMW"       #instance variable
+        
+# c1 = Car()
+# c2 = Car()
+# Car.wheels = 5
+# print(c1.com,c1.mil,c1.wheels)
+
+class Student:
+    school = "MIT"
+    
+    def __init__(self,m1,m2,m3):
+        self.m1 = m1
+        self.m2 = m2
+        self.m3 = m3
+    def avg(self):       #instance method
+        return (self.m1+self.m2+self.m3)/3
+    @classmethod
+    def info(cls):       #class method
+        return cls.school
+    @staticmethod        #static method
+    def infoStatic():
+        print("This is the MIT college")
+s1 = Student(11,22,33)
+s2 = Student(22,33,44)
+
+print(s1.avg())
+print(s2.avg())
+print(Student.info())
+Student.infoStatic()
