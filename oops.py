@@ -74,30 +74,66 @@
 # Student.infoStatic()
 
 #Class inside a class 
-class Student:                     #outer class
-    def __init__(self,name,rollno):
-        self.name = name
-        self.rollno = rollno
-        self.lap = self.Laptop()
-    def show(self):
-        print(self.name,self.rollno)
+# class Student:                     #outer class
+#     def __init__(self,name,rollno):
+#         self.name = name
+#         self.rollno = rollno
+#         self.lap = self.Laptop()
+#     def show(self):
+#         print(self.name,self.rollno)
         
     
-    class Laptop:                  #inner class
-        def __init__(self):
-            self.brand="Dell"
-            self.cpu="i5"
-            self.ram=8
-        def show(self):
-            print(self.brand,self.cpu,self.ram)
+#     class Laptop:                  #inner class
+#         def __init__(self):
+#             self.brand="Dell"
+#             self.cpu="i5"
+#             self.ram=8
+#         def show(self):
+#             print(self.brand,self.cpu,self.ram)
     
-s1 = Student("Vishwam",20)
-s2 = Student("Shukla",23)
+# s1 = Student("Vishwam",20)
+# s2 = Student("Shukla",23)
 
-s1.show()
-s2.show()
+# s1.show()
+# s2.show()
 
-lap1 = Student.Laptop()
-lap2 = Student.Laptop()
+# lap1 = Student.Laptop()
+# lap2 = Student.Laptop()
 
-lap1.show()
+# lap1.show()
+
+#inheritance
+class A:               #Parent class or Super class
+    def feature1(self):
+        print("Feature 1 is working")
+    def feature2(self):
+        print("Feature 2 is working")
+ #Single level        
+class B(A):            #Child class or Sub class
+    def feature3(self):
+        print("Feature 3 is working")
+    def feature4(self):
+        print("Feature 4 is working")
+
+#Multilevel Inheritance        
+class C(B):            #Child class or Sub class
+    def feature5(self):
+        print("Feature 5 is working")
+    def feature6(self):
+        print("Feature 6 is working")
+ 
+ #Multiple Inheritance       
+class C(A,B):            #Child class or Sub class
+    def feature5(self):
+        print("Feature 5 is working")
+    def feature6(self):
+        print("Feature 6 is working")
+a1 = A()
+a1.feature1()
+a1.feature2()
+
+b1=B()
+b1.feature2()
+
+c1=C()
+c1.feature1()
