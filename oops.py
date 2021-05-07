@@ -176,14 +176,43 @@
 
 #Duck typing
 
-class PyCharm:
-    def execute(self):
-        print("Compile")
-        print("Run")
-class Laptop:
-    def code(self,ide):
-        ide.execute()
+# class PyCharm:
+#     def execute(self):
+#         print("Compile")
+#         print("Run")
+# class Laptop:
+#     def code(self,ide):
+#         ide.execute()
         
-ide=PyCharm()
-lap1 = Laptop()
-lap1.code(ide)
+# ide=PyCharm()
+# lap1 = Laptop()
+# lap1.code(ide)
+
+
+#operator overloading
+
+
+
+# a=1
+# b=3
+
+# print(int.__add__(a,b))  #behind the scene of print(a+b)
+
+class Student:
+    
+    def __init__(self,m1,m2):
+        self.m1 = m1
+        self.m2 = m2
+    def __add__(self,other):
+        m1 = self.m1 + other.m1
+        m2 = self.m2 + other.m2
+        s3 = Student(m1,m2)
+        
+        return s3
+        
+s1=Student(2,2)
+s2 = Student(3,4)
+
+s3 = s1+s2  #-> Student.__add__(s1,s2)
+
+print(s3.m1 -1)
