@@ -65,3 +65,23 @@ Fortunately, you rarely want to do random indexing or slicing on a stack. Most o
 
 The constant time .append() and .pop() operations make deque an excellent choice for implementing a Python stack if your code doesn’t use threading."""
 
+#Program to check for balanced parathesis
+open_list = ["[","{","("]
+close_list = ["]","}",")"]
+
+def check(myString):
+    stack = []
+    for i in myString:
+        if i in open_list:
+            stack.append(i)
+        elif i in close_list:
+            if(len(stack)==0):
+                return "Brackets are not balanced"
+            else:
+                stack.pop()
+    if(len(stack)==0):
+        print("Brackets are balanced")
+    else:
+        print("Brackets are not balanced")
+string = "[[]]]"
+print(check(string))
