@@ -98,6 +98,20 @@ def reverse(myString1):
     reverse_string=""
     while(len(stack1)!=0):            #Pop till stack gets empty
         reverse_string += stack1.pop()
-    return reverse_string             #retuen the reversed string when the stack gets empty
+    return reverse_string             #return the reversed string when the stack gets empty
 string1 = "abcd"
 print(reverse(string1))
+
+
+#Program to convert decimal into binary
+
+def decimalToBinary(myDecimal):
+    stack3 = []
+    while(myDecimal != 0):
+        new_num = myDecimal % 2      
+        stack3.append(new_num)      #append remainders to stack
+        myDecimal = myDecimal // 2  #Divide the number by 2 
+    while(len(stack3) != 0):        #check if stack is empty
+        binary_number= stack3.pop()  #pop the stack to make binary number
+        print(binary_number)
+decimalToBinary(10)
