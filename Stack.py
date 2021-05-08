@@ -85,3 +85,19 @@ def check(myString):
         print("Brackets are not balanced")
 string = "[[]]]"
 print(check(string))
+
+
+#Program to reverse the string
+
+
+def reverse(myString1):
+    stack1 = []
+    for i in range(len(myString1)):   #append into the stack
+        stack1.append(myString1[i])
+    print(stack1)
+    reverse_string=""
+    while(len(stack1)!=0):            #Pop till stack gets empty
+        reverse_string += stack1.pop()
+    return reverse_string             #retuen the reversed string when the stack gets empty
+string1 = "abcd"
+print(reverse(string1))
