@@ -75,7 +75,7 @@ def check(myString):
         if i in open_list:
             stack.append(i)
         elif i in close_list:
-            if(len(stack)==0):
+            if(len(stack)==0):   #if the stack is empty, return unbalanced e.g (()))))
                 return "Brackets are not balanced"
             else:
                 stack.pop()
