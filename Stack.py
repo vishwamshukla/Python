@@ -115,3 +115,5 @@ def decimalToBinary(myDecimal):
         binary_number= stack3.pop()  #pop the stack to make binary number
         print(binary_number)
 decimalToBinary(10)
+
+print(bin(10))  #Decimal to binary without Stack
