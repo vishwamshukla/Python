@@ -20,6 +20,7 @@ print(myStack)
 myStack.pop()  #Removes a
 print(myStack)
 
+
 # myStack.pop() #Throw an error (Pop from empty list)
 # print(myStack)
 """Lists can run into speed issues as it grows The items in a list are stored with the goal of providing fast access to random elements in the list. At a high level, 
