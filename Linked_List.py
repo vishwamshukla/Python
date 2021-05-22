@@ -92,6 +92,19 @@ class LinkedList:
                 p=p.next
             t.next = q.next
             q.next = t
+    def delete(self,index):
+        if(index ==1):
+            p = self.first
+            self.first = self.first.next
+            p = None
+        elif(index > 1):
+            p = self.first
+            q = None
+            for i in range(index -1):
+                q = p
+                p = p.next
+            q.next = p.next
+            p = None
 ll = LinkedList()
 # n = int(input("How many you like to add?"))
 # for i in range(n):
@@ -107,5 +120,7 @@ ll.insert(4,50)
 # ll.max()
 # ll.min()
 # ll.search(60)
-ll.sortedInsert(35)
+# ll.sortedInsert(35)
+ll.delete(5)
 ll.display()
+
