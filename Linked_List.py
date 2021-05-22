@@ -79,6 +79,19 @@ class LinkedList:
                 print("Found")
             p = p.next
         print("Not Found")
+        
+    def sortedInsert(self,data):
+        t = Node(data)
+        if(self.first == None):
+            self.first = t
+        else:
+            p = self.first
+            q = None
+            while(p is not None and p.data < data):
+                q = p
+                p=p.next
+            t.next = q.next
+            q.next = t
 ll = LinkedList()
 # n = int(input("How many you like to add?"))
 # for i in range(n):
@@ -88,10 +101,11 @@ ll.insert(0,10)
 ll.insert(1,20)
 ll.insert(2,30)
 ll.insert(3,40)
-ll.insert(3,50)    
+ll.insert(4,50)
+# ll.count()
+# ll.sum()
+# ll.max()
+# ll.min()
+# ll.search(60)
+ll.sortedInsert(35)
 ll.display()
-ll.count()
-ll.sum()
-ll.max()
-ll.min()
-ll.search(60)
