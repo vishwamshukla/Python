@@ -1,3 +1,6 @@
+from typing import Counter
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -93,6 +96,8 @@ class LinkedList:
             t.next = q.next
             q.next = t
     def delete(self,index):
+        if(index < 1 and index > self.count()):
+            print("Something is wrong")
         if(index ==1):
             p = self.first
             self.first = self.first.next
@@ -105,6 +110,16 @@ class LinkedList:
                 p = p.next
             q.next = p.next
             p = None
+    def CheckifLLisSorted(self):
+        x = -32768
+        p = self.first
+        while(p is not None):
+            if(x > p.data):
+                return False
+            else:
+                x = p.data
+                p = p.next
+        return True
 ll = LinkedList()
 # n = int(input("How many you like to add?"))
 # for i in range(n):
@@ -121,6 +136,7 @@ ll.insert(4,50)
 # ll.min()
 # ll.search(60)
 # ll.sortedInsert(35)
-ll.delete(5)
+#ll.delete(4)
 ll.display()
+print(ll.CheckifLLisSorted())
 
