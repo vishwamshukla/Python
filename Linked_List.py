@@ -117,13 +117,23 @@ class LinkedList:
                 x = p.data
                 p = p.next
         return True
+    def removeDups(self):
+        p = q = self.first
+        while p is not None:
+            while q.next is not None:   # check second.next here rather than second
+                if q.next.data == q.data:   # check second.next.data, not second.data
+                    q.next = q.next.next   # cut second.next out of the list
+                else:
+                    q = q.next   # put this line in an else, to avoid skipping items
+            p = q = q.next
+                    
 ll = LinkedList()
 # n = int(input("How many you like to add?"))
 # for i in range(n):
 #     data = int(input("Enter data"))
 #     ll.append(data)
 ll.insert(0,10)
-ll.insert(1,20)
+ll.insert(1,10)
 ll.insert(2,30)
 ll.insert(3,40)
 ll.insert(4,50)
@@ -136,4 +146,5 @@ ll.insert(4,50)
 #ll.delete(4)
 ll.display()
 print(ll.CheckifLLisSorted())
-
+ll.removeDups()
+ll.display()
