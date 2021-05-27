@@ -4,5 +4,8 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"python.pythonPath": "C:\\Users\\shukl\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
+		
+	}
 }
