@@ -150,17 +150,35 @@ class LinkedList:
             q=p
             p=p.next
             q.next=r
-        self.first=q      
+        self.first=q    
+        
+    def concate(self,list2):
+        p = self.first
+        second = list2.first
+        while(p.next is not None):
+            p = p.next
+        p.next = second
+        second = None
+        
+        
+          
 ll = LinkedList()
+ll1 = LinkedList()
+
 # n = int(input("How many you like to add?"))
 # for i in range(n):
 #     data = int(input("Enter data"))
 #     ll.append(data)
 ll.insert(0,10)
-ll.insert(1,10)
+ll.insert(1,20)
 ll.insert(2,30)
 ll.insert(3,40)
 ll.insert(4,50)
+
+ll1.insert(0,60)
+ll1.insert(1,70)
+ll1.insert(2,80)
+ll1.insert(3,90)
 # ll.count()
 # ll.sum()
 # ll.max()
@@ -168,12 +186,14 @@ ll.insert(4,50)
 # ll.search(60)
 # ll.sortedInsert(35)
 #ll.delete(4)
-ll.display()
+
 print(ll.CheckifLLisSorted())
 #ll.removeDups()
 
 #ll.reverseLLbyelements()
 #ll.display()
 
-ll.reverseLLbyLinks()
+#ll.reverseLLbyLinks()
+
+ll.concate(ll1)
 ll.display()
