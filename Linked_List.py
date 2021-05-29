@@ -160,7 +160,33 @@ class LinkedList:
         p.next = second
         second = None
         
+    def merge(self,list2):
+        p = self.first
+        q = list2.first
         
+        if(p.data < q.data):
+            third = last = p
+            p=p.next
+            third.next = None
+        else:
+            third = last=q
+            q=q.next
+            third.next = None
+        while(p and q):
+            if(p.data < q.data):
+                last.next = p
+                last = p
+                p=p.next
+                last.next = None
+            else:
+                last.next = q
+                last = q
+                q = q.next
+                last.next = None
+        if(p is not None):
+            last.next = p
+        elif(q is not None):
+            last.next = q        
           
 ll = LinkedList()
 ll1 = LinkedList()
@@ -170,15 +196,15 @@ ll1 = LinkedList()
 #     data = int(input("Enter data"))
 #     ll.append(data)
 ll.insert(0,10)
-ll.insert(1,20)
-ll.insert(2,30)
-ll.insert(3,40)
-ll.insert(4,50)
+ll.insert(1,30)
+ll.insert(2,50)
+ll.insert(3,60)
+ll.insert(4,70)
 
-ll1.insert(0,60)
-ll1.insert(1,70)
-ll1.insert(2,80)
-ll1.insert(3,90)
+ll1.insert(0,80)
+ll1.insert(1,99)
+ll1.insert(2,110)
+ll1.insert(3,122)
 # ll.count()
 # ll.sum()
 # ll.max()
@@ -187,7 +213,7 @@ ll1.insert(3,90)
 # ll.sortedInsert(35)
 #ll.delete(4)
 
-print(ll.CheckifLLisSorted())
+#print(ll.CheckifLLisSorted())
 #ll.removeDups()
 
 #ll.reverseLLbyelements()
@@ -195,5 +221,7 @@ print(ll.CheckifLLisSorted())
 
 #ll.reverseLLbyLinks()
 
-ll.concate(ll1)
+#ll.concate(ll1)
+#ll.display()
+ll.merge(ll1)
 ll.display()
