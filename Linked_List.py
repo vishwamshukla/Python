@@ -140,7 +140,17 @@ class LinkedList:
         while(p is not None):
             p.data = A[i]
             i-=1
-            p=p.next                    
+            p=p.next
+    def reverseLLbyLinks(self):
+        p=self.first
+        q=None
+        r = None
+        while(p is not None):
+            r=q
+            q=p
+            p=p.next
+            q.next=r
+        self.first=q      
 ll = LinkedList()
 # n = int(input("How many you like to add?"))
 # for i in range(n):
@@ -162,5 +172,8 @@ ll.display()
 print(ll.CheckifLLisSorted())
 #ll.removeDups()
 
-ll.reverseLLbyelements()
+#ll.reverseLLbyelements()
+#ll.display()
+
+ll.reverseLLbyLinks()
 ll.display()
