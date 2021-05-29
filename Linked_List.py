@@ -126,7 +126,21 @@ class LinkedList:
                 else:
                     q = q.next   # put this line in an else, to avoid skipping items
             p = q = q.next
-                    
+            
+    def reverseLLbyelements(self):
+        p = self.first
+        i=0
+        A =[]
+        while(p is not None):
+            A.append(p.data)
+            p=p.next
+            i+=1
+        p=self.first
+        i=i-1
+        while(p is not None):
+            p.data = A[i]
+            i-=1
+            p=p.next                    
 ll = LinkedList()
 # n = int(input("How many you like to add?"))
 # for i in range(n):
@@ -146,5 +160,7 @@ ll.insert(4,50)
 #ll.delete(4)
 ll.display()
 print(ll.CheckifLLisSorted())
-ll.removeDups()
+#ll.removeDups()
+
+ll.reverseLLbyelements()
 ll.display()
