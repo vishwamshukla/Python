@@ -172,6 +172,7 @@ class LinkedList:
             third = last=q
             q=q.next
             third.next = None
+            
         while(p and q):
             if(p.data < q.data):
                 last.next = p
@@ -188,6 +189,28 @@ class LinkedList:
         elif(q is not None):
             last.next = q        
           
+    def checkLoop(self):
+        p=q=self.first
+        
+        while(p and q and p is not q):
+            p=p.next 
+            q=q.next
+            if(q):
+                q=q.next
+        if(p == q):
+            print("Loop found")
+        else:
+            print("No loop found in the Linked list")
+            
+    def checkLoop2(self):
+        slow = fast = self.first
+        while(slow and fast and fast.next):
+            slow = slow.next
+            fast = fast.next.next
+        if slow ==fast:
+            print("Loop found")
+        else:
+            print("Loop not found")
 ll = LinkedList()
 ll1 = LinkedList()
 
@@ -225,3 +248,4 @@ ll1.insert(3,122)
 #ll.display()
 ll.merge(ll1)
 ll.display()
+ll.checkLoop2()
