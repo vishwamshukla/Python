@@ -224,6 +224,7 @@ ll.insert(2,50)
 ll.insert(3,60)
 ll.insert(4,70)
 
+2
 ll1.insert(0,80)
 ll1.insert(1,99)
 ll1.insert(2,110)
