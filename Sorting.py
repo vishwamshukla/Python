@@ -1,4 +1,4 @@
-#Bubble sort
+#Bubble sort  if list is sorted then time is O(n) else will take O(n^2)
 def bubbleSort(arr):
     n = len(arr)
     
